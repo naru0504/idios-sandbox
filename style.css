@@ -1,0 +1,139 @@
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
+
+.thumbnail-carousel {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.splide__slide.is-active {
+  opacity: 1;
+}
+
+.splide__slide {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.thumbnail-carousel .splide__slide.is-active {
+  border: 2px solid #333;
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: auto;
+}
+
+.main-carousel {
+  flex: 1;
+}
+
+.thumbnail-carousel .splide__track {
+  height: 300px; /* 任意で高さ調整 */
+}
+
+.modal-prev,
+.modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 1;
+}
+.modal-prev {
+  left: 10px;
+}
+.modal-next {
+  right: 10px;
+}
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  background: #f5f5f5;
+}
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+  transition: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 10px;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Optional: モーダル表示中は背景スクロール防止 */
+body.modal-open {
+  overflow: hidden;
+}
+
+.marquee-track {
+  position: relative;
+}
+.marquee-item {
+  position: relative;
+  display: inline-block;
+}
+
+.marquee-track-img {
+  display: block;
+}
+.modal-plus {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+.marquee-track-img + .modal-plus {
+  /* 画像の直後の+マークを画像の右上に重ねる */
+  margin-left: -36px;
+}
